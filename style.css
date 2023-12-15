@@ -1,0 +1,170 @@
+html {
+	height: 100%;
+}
+
+body {
+	background-image: url(img/background.jpeg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+h1 {
+	text-align: center;
+}
+
+.header {
+	display: flex;
+	justify-content: space-around;
+	width: 80%;
+	margin: 20px auto;
+	background-color: white;
+	padding: 10px;
+	display: flex;
+	/* определяем контейнер как flex-контейнер */
+	justify-content: space-between;
+	/* распределяем элементы по горизонтали */
+	flex-wrap: wrap;
+	/* разрешаем перенос элементов, если они не помещаются в одну строку */
+}
+
+.menu-list {
+	display: flex;
+	list-style-type: none;
+}
+
+.menu-item:not(:last-child) {
+	margin-right: 63px;
+}
+
+.menu-item a {
+	text-decoration: none;
+}
+
+.active {
+	font-weight: bold;
+}
+
+.container {
+	width: 80%;
+	margin: 20px auto;
+	background-color: white;
+	padding: 10px;
+	display: flex;
+	/* определяем контейнер как flex-контейнер */
+	justify-content: space-between;
+	/* распределяем элементы по горизонтали */
+	flex-wrap: wrap;
+	/* разрешаем перенос элементов, если они не помещаются в одну строку */
+}
+
+card {
+	width: 30%;
+	/* ширина карточки = 30% от контейнера */
+	max-width: 350px;
+	/* максимальная ширина 350px */
+	border: 1px solid black;
+	/* черная рамка толщиной в 1px */
+	padding: 20px;
+	/* внутренний отступ с каждой стороны по 20px */
+}
+
+.card__description {
+	margin-top: 65px;
+	/* внешний отступ в 65px */
+	text-align: center;
+	/* выравниваем текст по центру */
+}
+
+.card__image {
+	height: 100px;
+	/* ширина 100px */
+	width: 100%;
+	/* ширина блока под изображение 100% */
+	max-width: 180px;
+	/* максимальная ширина блока под изображение 180px */
+	margin: auto;
+	/* автоматические отступы, центрируем блок под изображение */
+}
+
+/* Медиазпросы */
+/* При ширине браузера 768px и меньше */
+@media screen and (max-width: 768px) {
+	.card {
+		width: 50%;
+		/* ширина карточки 50% от ширины контейнера */
+		max-width: 100%;
+		/* максимальная ширина карточки 100% от ширины контейнера */
+		margin: auto auto 10px;
+		/* автоматический внешний отступ со всех сторон, но снизу 10px */
+	}
+}
+
+/* При ширине браузера 480px и меньше
+*/
+@media screen and (max-width: 480px) {
+	.card {
+		width: 95%;
+	}
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  display: block;
+  text-decoration: none;
+  outline: none;
+  transition: .4s ease-in-out;
+}
+.topmenu {
+  backface-visibility: hidden;
+  background: rgba(255,255,255,.8);
+}
+.topmenu > li {
+  display: inline-block;
+  position: relative;
+}
+.topmenu > li > a {
+  font-family: 'Exo 2', sans-serif;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 30px;
+  font-weight: bold;
+  color: #003559;
+  text-transform: uppercase;
+}
+.down:after {
+  content: "\f107";
+  margin-left: 8px;
+  font-family: FontAwesome;
+}
+.topmenu li a:hover { color: #E6855F; }
+.submenu {
+  background: white;
+  border: 2px solid #003559;
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5;
+  width: 150px;
+  transform: perspective(600px) rotateX(-90deg);
+  transform-origin: 0% 0%;
+  transition: .6s ease-in-out;
+}
+.topmenu > li:hover .submenu{
+  visibility: visible;
+  opacity: 1;
+  transform: perspective(600px) rotateX(0deg);
+}
+.submenu li a {
+  color: #7f7f7f;
+  font-size: 13px;
+  line-height: 36px;
+  padding: 0 25px;
+  font-family: 'Kurale', serif;
+}
